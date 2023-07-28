@@ -18,6 +18,11 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
     private CustomerRepo repo;
+
+    public CustomerServiceImpl(CustomerRepo repo) {
+        this.repo = repo;
+    }
+
     @Override
     public Customer add(Customer customer) {
         dataValidation(customer);
