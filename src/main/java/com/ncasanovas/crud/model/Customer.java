@@ -1,6 +1,8 @@
 package com.ncasanovas.crud.model;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Set;
@@ -16,6 +18,7 @@ public class Customer {
     @Column(name="customer_name", length = 100, nullable = false)
     private String name;
     private String lastName;
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateOfBirth;
     private String mail;
 
